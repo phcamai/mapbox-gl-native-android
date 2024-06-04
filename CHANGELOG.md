@@ -4,6 +4,30 @@ Mapbox welcomes participation and contributions from everyone.
 
 ## Mapbox Android Telemetry
 
+### v8.1.5
+
+- [libtelemetry] Bump workManagerVersion to 2.7.1, add JavaVersion.VERSION_1_8 to compileOptions [#573](https://github.com/mapbox/mapbox-events-android/pull/573)
+
+### v8.1.4
+
+- [libtelemetry] Remove WAKE_LOCK permission. Replace JobIntentService with Worker and WorkManager. [#571](https://github.com/mapbox/mapbox-events-android/pull/571)
+
+### v8.1.3
+
+- [libtelemetry] Add LocationEvent constructor that doesn't accept permissionStatus [#569](https://github.com/mapbox/mapbox-events-android/pull/569)
+
+### v8.1.2
+
+- [libtelemetry] Fix LocationEvent timestamp [#567](https://github.com/mapbox/mapbox-events-android/pull/567)
+- [libtelemetry] Add @Keep annotation to the AttachmentMetadata [#565](https://github.com/mapbox/mapbox-events-android/pull/565)
+- Fix TelemetryUtils.obtainApplicationState() method [#559](https://github.com/mapbox/mapbox-events-android/pull/559)
+
+### v8.1.1
+
+- [telemetry] Fix crash when using obtainCellularNetworkType [#555](https://github.com/mapbox/mapbox-events-android/pull/555)
+- [ci] Update Firebase test matrix [#553](https://github.com/mapbox/mapbox-events-android/pull/553)
+- [build] Attach more info to Maven publications uploaded [#552](https://github.com/mapbox/mapbox-events-android/pull/552)
+
 ### v8.1.0
 
 - [telemetry] Disable `MapboxTelemetryInitProvider` if the telemetry is disabled via app's manifest.
@@ -303,6 +327,14 @@ Mapbox welcomes participation and contributions from everyone.
 
 
 ## Mapbox Android Core
+
+### v5.0.2
+
+- [location] Add new field permissionStatus to location events [#566](https://github.com/mapbox/mapbox-events-android/pull/566)
+
+### v5.0.1
+
+- [build] Attach more info to Maven publications uploaded [#552](https://github.com/mapbox/mapbox-events-android/pull/552)
 
 ### v5.0.0
 
