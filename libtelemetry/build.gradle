@@ -4,7 +4,7 @@ apply plugin: 'com.android.library'
 // so that Maps SDK doesn't rely on them being served from the top level build.gradle
 apply from: "../gradle/dependencies.gradle"
 
-version = VERSION_NAME
+version = "8.1.1-SNAPSHOT"// VERSION_NAME
 
 android {
     compileSdkVersion androidVersions.compileSdkVersion
@@ -16,6 +16,8 @@ android {
         versionName version
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'proguard-consumer.pro'
+
+        buildConfigField "String", "VERSION_NAME", "\"8.1.1-SNAPSHOT\""
     }
 
     buildTypes {
@@ -28,85 +30,87 @@ android {
         unitTests.returnDefaultValues = true
     }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
-    }
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
 
-    flavorDimensions "version"
-    productFlavors {
-        okhttp4 {
-            dimension "version"
-            minSdkVersion 21
-        }
-
-        okhttp3 {
-            dimension "version"
-            versionNameSuffix "-okhttp3"
-        }
-    }
+//    flavorDimensions "version"
+//    productFlavors {
+//        okhttp4 {
+//            dimension "version"
+//            minSdkVersion 21
+//        }
+//
+//        okhttp3 {
+//            dimension "version"
+//            versionNameSuffix "-okhttp3"
+//        }
+//    }
 }
 
 dependencies {
     implementation dependenciesList.androidCore
-    okhttp3Implementation dependenciesList.okhttp3
-    okhttp4Implementation dependenciesList.okhttp4
+//    okhttp3Implementation dependenciesList.okhttp3
+//    okhttp4Implementation dependenciesList.okhttp4
+    implementation dependenciesList.okhttp3
     implementation dependenciesList.gson
     implementation dependenciesList.supportAnnotation
     implementation project(':libcore')
+    implementation project(':liblocation')
 
     implementation dependenciesList.supportCoreUtils
 
-    testImplementation dependenciesList.junit
-    testImplementation dependenciesList.mockito
-
-    testOkhttp3Implementation dependenciesList.okhttp3Mockwebserver
-    testOkhttp3Implementation dependenciesList.okhttp3Tls
-
-    testOkhttp4Implementation dependenciesList.okhttp4Mockwebserver
-    testOkhttp4Implementation dependenciesList.okhttp4Tls
-
-    testImplementation dependenciesList.commonsIO
-    testImplementation dependenciesList.assertJ
-
-    androidTestImplementation dependenciesList.mockitoAndroid
-    androidTestImplementation dependenciesList.testRunner
-    androidTestImplementation dependenciesList.testRules
+//    testImplementation dependenciesList.junit
+//    testImplementation dependenciesList.mockito
+//
+//    testOkhttp3Implementation dependenciesList.okhttp3Mockwebserver
+//    testOkhttp3Implementation dependenciesList.okhttp3Tls
+//
+//    testOkhttp4Implementation dependenciesList.okhttp4Mockwebserver
+//    testOkhttp4Implementation dependenciesList.okhttp4Tls
+//
+//    testImplementation dependenciesList.commonsIO
+//    testImplementation dependenciesList.assertJ
+//
+//    androidTestImplementation dependenciesList.mockitoAndroid
+//    androidTestImplementation dependenciesList.testRunner
+//    androidTestImplementation dependenciesList.testRules
 }
 
-apply plugin: 'maven-publish'
-apply plugin: 'com.mapbox.sdkRegistry'
-apply from: file('../gradle/artifact-settings.gradle')
+//apply plugin: 'maven-publish'
+////apply plugin: 'com.mapbox.sdkRegistry'
+//apply from: file('../gradle/artifact-settings.gradle')
+//
+//version = project.ext.versionName
+//group = project.ext.mapboxArtifactGroupId
+//
+//afterEvaluate {
+//    publishing {
+//            publications {
+//                okhttp4Release(MavenPublication) {
+//                    from components.okhttp4Release
+//                    groupId this.group
+//                    artifactId project.ext.mapboxArtifactId
+//                    version this.version
+//                }
+//
+//                okhttp3Release(MavenPublication) {
+//                    from components.okhttp3Release
+//                    groupId this.group
+//                    artifactId project.ext.mapboxArtifactId + "-okhttp3"
+//                    version this.version
+//                }
+//            }
+//    }
+//}
 
-version = project.ext.versionName
-group = project.ext.mapboxArtifactGroupId
-
-afterEvaluate {
-    publishing {
-            publications {
-                okhttp4Release(MavenPublication) {
-                    from components.okhttp4Release
-                    groupId this.group
-                    artifactId project.ext.mapboxArtifactId
-                    version this.version
-                }
-
-                okhttp3Release(MavenPublication) {
-                    from components.okhttp3Release
-                    groupId this.group
-                    artifactId project.ext.mapboxArtifactId + "-okhttp3"
-                    version this.version
-                }
-            }
-    }
-}
-
-registry {
-    sdkName = project.ext.mapboxRegistrySdkName
-    production = true
-    snapshot = project.ext.versionName.endsWith("-SNAPSHOT")
-    override = true
-    dryRun = false
-    publish = true
-    publications = ["okhttp4Release", "okhttp3Release"]
-}
+//registry {
+//    sdkName = project.ext.mapboxRegistrySdkName
+//    production = true
+//    snapshot = project.ext.versionName.endsWith("-SNAPSHOT")
+//    override = true
+//    dryRun = false
+//    publish = true
+//    publications = ["okhttp4Release", "okhttp3Release"]
+//}

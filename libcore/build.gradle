@@ -18,11 +18,11 @@ android {
         consumerProguardFiles 'proguard-consumer.pro'
     }
 
-    sourceSets {
-        main {
-            java.srcDirs = ['src/main/java', '../liblocation/src/main/java']
-        }
-    }
+//    sourceSets {
+//        main {
+//            java.srcDirs = ['src/main/java', '../liblocation/src/main/java']
+//        }
+//    }
 
     lintOptions {
         warningsAsErrors true
@@ -43,41 +43,41 @@ android {
 dependencies {
     compileOnly dependenciesList.gmsLocation
 
-    testImplementation dependenciesList.junit
-    testImplementation dependenciesList.mockito
-    testImplementation dependenciesList.assertJ
-    androidTestImplementation dependenciesList.testEspressoCore
-    androidTestImplementation dependenciesList.testRunner
-    androidTestImplementation dependenciesList.testRules
+//    testImplementation dependenciesList.junit
+//    testImplementation dependenciesList.mockito
+//    testImplementation dependenciesList.assertJ
+//    androidTestImplementation dependenciesList.testEspressoCore
+//    androidTestImplementation dependenciesList.testRunner
+//    androidTestImplementation dependenciesList.testRules
 }
 
+//
+//apply plugin: 'maven-publish'
+////apply plugin: 'com.mapbox.sdkRegistry'
+//apply from: file('../gradle/artifact-settings.gradle')
+//
+//version = project.ext.versionName
+//group = project.ext.mapboxArtifactGroupId
+//
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            release(MavenPublication) {
+//                from components.release
+//                groupId this.group
+//                artifactId project.ext.mapboxArtifactId
+//                version this.version
+//            }
+//        }
+//    }
+//}
 
-apply plugin: 'maven-publish'
-apply plugin: 'com.mapbox.sdkRegistry'
-apply from: file('../gradle/artifact-settings.gradle')
-
-version = project.ext.versionName
-group = project.ext.mapboxArtifactGroupId
-
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-                groupId this.group
-                artifactId project.ext.mapboxArtifactId
-                version this.version
-            }
-        }
-    }
-}
-
-registry {
-    sdkName = project.ext.mapboxRegistrySdkName
-    production = true
-    snapshot = project.ext.versionName.endsWith("-SNAPSHOT")
-    override = true
-    dryRun = false
-    publish = true
-    publications = ["release"]
-}
+//registry {
+//    sdkName = project.ext.mapboxRegistrySdkName
+//    production = true
+//    snapshot = project.ext.versionName.endsWith("-SNAPSHOT")
+//    override = true
+//    dryRun = false
+//    publish = true
+//    publications = ["release"]
+//}

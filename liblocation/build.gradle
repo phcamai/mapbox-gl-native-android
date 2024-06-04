@@ -30,13 +30,13 @@ android {
 dependencies {
     compileOnly dependenciesList.gmsLocation
 
-    testImplementation dependenciesList.junit
-    testImplementation dependenciesList.mockito
-    testImplementation dependenciesList.assertJ
-    testImplementation dependenciesList.gmsLocation
+//    testImplementation dependenciesList.junit
+//    testImplementation dependenciesList.mockito
+//    testImplementation dependenciesList.assertJ
+//    testImplementation dependenciesList.gmsLocation
 
-    androidTestImplementation dependenciesList.testEspressoCore
-    androidTestImplementation dependenciesList.gmsLocation
-    androidTestImplementation dependenciesList.testRunner
-    androidTestImplementation dependenciesList.testRules
+//    androidTestImplementation dependenciesList.testEspressoCore
+//    androidTestImplementation dependenciesList.gmsLocation
+//    androidTestImplementation dependenciesList.testRunner
+//    androidTestImplementation dependenciesList.testRules
 }
