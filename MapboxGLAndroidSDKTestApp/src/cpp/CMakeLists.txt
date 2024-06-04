@@ -12,7 +12,7 @@ add_library(
 target_include_directories(
     example-custom-layer
     PRIVATE
-        ../../../../MapboxGLAndroidSDK/src/main/cpp
+        ../../../MapboxGLAndroidSDK/src/main/cpp
 )
 
 # Use the same compile_options as in mapbox-gl

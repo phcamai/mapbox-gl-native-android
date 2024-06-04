@@ -12,7 +12,7 @@ ext.nativeBuild = { nativeTargets ->
         //
         // When building from Android Studio, gradle.properties sets `android.buildOnlyTargetAbi=true` so that
         // only the architecture for the device you're running on gets built.
-        def abi = 'all'
+        def abi = 'arm64-v8a x86_64' //'all'
         if (!project.hasProperty('android.injected.invoked.from.ide') || project.hasProperty("mapbox.abis")) {
             // Errors when the user invokes Gradle from the command line and didn't set mapbox.abis
             abi = project.getProperty("mapbox.abis")
@@ -21,8 +21,8 @@ ext.nativeBuild = { nativeTargets ->
         if (abi != 'none') {
             externalNativeBuild {
                 cmake {
-                    path "./src/main/cpp/CMakeLists.txt"
-                    version "3.10.2"
+                    path "./src/cpp/CMakeLists.txt"
+                    version "3.22.1" //"3.10.2"
                 }
             }
         }

@@ -5,24 +5,26 @@ buildscript {
         google()
         jcenter()
         maven {
+            //url = uri("D:\\Reference\\android\\repo") //"${HOME}/.m2/repository/"
+
             url 'https://api.mapbox.com/downloads/v2/releases/maven'
             authentication {
                 basic(BasicAuthentication)
             }
             credentials {
                 username "mapbox"
-                password = project.hasProperty('SDK_REGISTRY_TOKEN') ? project.property('SDK_REGISTRY_TOKEN') : System.getenv('SDK_REGISTRY_TOKEN')
+                password "pk.eyJ1IjoicG93ZXJob3VzZS1zb25nIiwiYSI6ImNsdmpka3pueTFpcmUyanBlYnVlZXA1MXYifQ.zSAjMS1KyPpqh4R5anbllQ"//project.hasProperty('SDK_REGISTRY_TOKEN') ? project.property('SDK_REGISTRY_TOKEN') : System.getenv('SDK_REGISTRY_TOKEN')
             }
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.1'
+        classpath 'com.android.tools.build:gradle:7.4.2'
         classpath dependenciesList.licensesPlugin
         classpath dependenciesList.kotlinPlugin
         classpath dependenciesList.androidPublishPlugin
         classpath dependenciesList.jacocoPlugin
-        classpath dependenciesList.mapboxSdkVersions
-        classpath dependenciesList.mapboxSdkRegistryPlugin
+//        classpath dependenciesList.mapboxSdkVersions
+//        classpath dependenciesList.mapboxSdkRegistryPlugin
     }
 }
 
@@ -32,13 +34,15 @@ allprojects {
         google()
         jcenter()
         maven {
+            //url = uri("D:\\Reference\\android\\repo") //"${HOME}/.m2/repository/"
+
             url 'https://api.mapbox.com/downloads/v2/releases/maven'
             authentication {
                 basic(BasicAuthentication)
             }
             credentials {
                 username "mapbox"
-                password = project.hasProperty('SDK_REGISTRY_TOKEN') ? project.property('SDK_REGISTRY_TOKEN') : System.getenv('SDK_REGISTRY_TOKEN')
+                password "pk.eyJ1IjoicG93ZXJob3VzZS1zb25nIiwiYSI6ImNsdmpka3pueTFpcmUyanBlYnVlZXA1MXYifQ.zSAjMS1KyPpqh4R5anbllQ"//project.hasProperty('SDK_REGISTRY_TOKEN') ? project.property('SDK_REGISTRY_TOKEN') : System.getenv('SDK_REGISTRY_TOKEN')
             }
         }
     }

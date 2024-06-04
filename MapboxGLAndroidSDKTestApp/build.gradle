@@ -73,14 +73,14 @@ dependencies {
     debugImplementation dependenciesList.leakCanaryDebug
     releaseImplementation dependenciesList.leakCanaryRelease
 
-    androidTestImplementation dependenciesList.supportAnnotations
-    androidTestImplementation dependenciesList.testRunner
-    androidTestImplementation dependenciesList.testRules
-    androidTestImplementation dependenciesList.testEspressoCore
-    androidTestImplementation dependenciesList.testEspressoIntents
-    androidTestImplementation dependenciesList.testEspressoContrib
-    androidTestImplementation dependenciesList.testUiAutomator
-    androidTestImplementation dependenciesList.appCenter
+//    androidTestImplementation dependenciesList.supportAnnotations
+//    androidTestImplementation dependenciesList.testRunner
+//    androidTestImplementation dependenciesList.testRules
+//    androidTestImplementation dependenciesList.testEspressoCore
+//    androidTestImplementation dependenciesList.testEspressoIntents
+//    androidTestImplementation dependenciesList.testEspressoContrib
+//    androidTestImplementation dependenciesList.testUiAutomator
+//    androidTestImplementation dependenciesList.appCenter
 }
 
 apply from: "${projectDir}/../gradle/gradle-make.gradle"
